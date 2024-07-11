@@ -15,6 +15,15 @@ import {
   CollapsibleContent,
 } from "@/components/ui/collapsible";
 
+import {
+  JudiciaryLinks,
+  ExecutiveLinks,
+  LegislatureLinks,
+  EmbassyLinks,
+  ParastatalsLinks,
+  DevolvedGovtLinks,
+} from "@/lib";
+
 export default function Navbar() {
   return (
     <header className="ml-40 flex h-20 w-full shrink-0 items-center px-4 gap-4 justify-between md:px-6">
@@ -25,38 +34,21 @@ export default function Navbar() {
             <NavigationMenuTrigger>Executive</NavigationMenuTrigger>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      President
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Deputy President
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Cabinet
-                    </div>
-                  </Link>
+                <NavigationMenuLink>
+                  {ExecutiveLinks.map((link, index) => {
+                    return (
+                      <Link
+                        href={link.path}
+                        key={index}
+                        className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                        prefetch={false}
+                      >
+                        <div className="text-sm font-medium leading-none group-hover:underline">
+                          {link.name}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
@@ -67,38 +59,21 @@ export default function Navbar() {
             <NavigationMenuTrigger>Legislature</NavigationMenuTrigger>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      National Assembly
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Senate
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      County Assemblies
-                    </div>
-                  </Link>
+                <NavigationMenuLink>
+                  {LegislatureLinks.map((link, index) => {
+                    return (
+                      <Link
+                        href={link.path}
+                        key={index}
+                        className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                        prefetch={false}
+                      >
+                        <div className="text-sm font-medium leading-none group-hover:underline">
+                          {link.name}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
@@ -109,104 +84,21 @@ export default function Navbar() {
             <NavigationMenuTrigger>Judiciary</NavigationMenuTrigger>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Supreme Court
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Court of Appeal
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      High Court
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Environment and Land Court
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Industrial Court
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Margistrate Courts
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Kadhi Courts
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Court Martial
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Tribunals
-                    </div>
-                  </Link>
+                <NavigationMenuLink>
+                  {JudiciaryLinks.map((link, index) => {
+                    return (
+                      <Link
+                        href={link.path}
+                        key={index}
+                        className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                        prefetch={false}
+                      >
+                        <div className="text-sm font-medium leading-none group-hover:underline">
+                          {link.name}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
@@ -217,28 +109,21 @@ export default function Navbar() {
             <NavigationMenuTrigger>Devolved Government</NavigationMenuTrigger>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Counties
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Wards
-                    </div>
-                  </Link>
+                <NavigationMenuLink>
+                  {DevolvedGovtLinks.map((link, index) => {
+                    return (
+                      <Link
+                        href={link.path}
+                        key={index}
+                        className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                        prefetch={false}
+                      >
+                        <div className="text-sm font-medium leading-none group-hover:underline">
+                          {link.name}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
@@ -249,49 +134,21 @@ export default function Navbar() {
             <NavigationMenuTrigger>Embassies</NavigationMenuTrigger>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Africa
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Europe
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Americas
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Asia
-                    </div>
-                  </Link>
+                <NavigationMenuLink>
+                  {EmbassyLinks.map((link, index) => {
+                    return (
+                      <Link
+                        href={link.path}
+                        key={index}
+                        className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                        prefetch={false}
+                      >
+                        <div className="text-sm font-medium leading-none group-hover:underline">
+                          {link.name}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
@@ -302,16 +159,21 @@ export default function Navbar() {
             <NavigationMenuTrigger>Parastatals</NavigationMenuTrigger>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="#"
-                    className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                    prefetch={false}
-                  >
-                    <div className="text-sm font-medium leading-none group-hover:underline">
-                      Companies
-                    </div>
-                  </Link>
+                <NavigationMenuLink>
+                  {ParastatalsLinks.map((link, index) => {
+                    return (
+                      <Link
+                        href={link.path}
+                        key={index}
+                        className="group grid h-auto w-full items-center justify-start gap-1 rounded-md bg-background p-4 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                        prefetch={false}
+                      >
+                        <div className="text-sm font-medium leading-none group-hover:underline">
+                          {link.name}
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </NavigationMenuLink>
               </div>
             </NavigationMenuContent>
