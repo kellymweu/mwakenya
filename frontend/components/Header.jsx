@@ -7,12 +7,13 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { NavLinks } from "@/lib";
 
 export default function Header() {
   return (
-    <header className="flex mt-4 w-full items-center justify-between px-4 md:px-6">
+    <header className="flex mt-4 px-14">
       {/* Icon and Logo */}
-      <Link href="#" className="flex items-center" prefetch={false}>
+      <Link href="/" className="flex items-center" prefetch={false}>
         <MountainIcon className="h-6 w-6" />
         <span className="sr-only">Mwakenya</span>
       </Link>
@@ -29,41 +30,21 @@ export default function Header() {
       <nav className="hidden lg:flex">
         <NavigationMenu>
           <NavigationMenuList>
-            <NavigationMenuLink asChild>
-              <Link
-                href="/"
-                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                prefetch={false}
-              >
-                Home
-              </Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link
-                href="about"
-                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                prefetch={false}
-              >
-                About
-              </Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link
-                href="downloads"
-                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                prefetch={false}
-              >
-                Downloads
-              </Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link
-                href="help"
-                className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                prefetch={false}
-              >
-                Help
-              </Link>
+            <NavigationMenuLink>
+              {NavLinks.map((link, index) => {
+                return (
+                  <Link
+                    href={link.path}
+                    key={index}
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                    prefetch={false}
+                  >
+                    <div className="text-sm font-medium leading-none group-hover:underline">
+                      {link.name}
+                    </div>
+                  </Link>
+                );
+              })}
             </NavigationMenuLink>
           </NavigationMenuList>
         </NavigationMenu>

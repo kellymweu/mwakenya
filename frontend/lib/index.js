@@ -1,3 +1,22 @@
+export const NavLinks = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/about",
+  },
+  {
+    name: "Downloads",
+    path: "/downloads",
+  },
+  {
+    name: "Help",
+    path: "/help",
+  },
+];
+
 export const ExecutiveLinks = [
   {
     name: "President",
