@@ -5,7 +5,6 @@ export default function Home() {
     <main>
       <section className="flex justify-center gap-4">
         <CarouselComponent />
-        <h1>Partyless, Leaderless, Tribeless</h1>
       </section>
     </main>
   );

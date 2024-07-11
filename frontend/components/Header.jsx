@@ -8,14 +8,20 @@ import {
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { NavLinks } from "@/lib";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header className="flex mt-4 px-14">
       {/* Icon and Logo */}
       <Link href="/" className="flex items-center" prefetch={false}>
-        <MountainIcon className="h-6 w-6" />
-        <span className="sr-only">Mwakenya</span>
+        <Image
+          src="/Kenyan Flag texture.webp"
+          alt="Kenyan Flag"
+          height={120}
+          width={60}
+          className="w-full m-0 hover:opacity-90"
+        />
       </Link>
       {/* Search Widget */}
       <div className="relative flex-1 max-w-md mx-auto">
@@ -110,25 +116,6 @@ function MenuIcon(props) {
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>
-  );
-}
-
-function MountainIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
     </svg>
   );
 }
