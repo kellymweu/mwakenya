@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <header className="flex h-16 w-full items-center justify-between px-4 md:px-6">
+    <header className="flex mt-4 w-full items-center justify-between px-4 md:px-6">
       {/* Icon and Logo */}
       <Link href="#" className="flex items-center" prefetch={false}>
         <MountainIcon className="h-6 w-6" />
@@ -31,7 +31,7 @@ export default function Header() {
           <NavigationMenuList>
             <NavigationMenuLink asChild>
               <Link
-                href="#"
+                href="/"
                 className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                 prefetch={false}
               >

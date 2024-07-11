@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutComponent() {
   return (
-    <main className="container mx-auto px-4 md:px-6 py-12 md:py-24">
+    <main className="container mx-auto px-14 py-2">
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-6">
           <div>
@@ -26,13 +26,6 @@ export default function AboutComponent() {
               cutting-edge products that solve real-world problems and empower
               our clients to achieve their goals. From custom web applications
               to mobile apps, we have the expertise to bring your ideas to life.
-            </p>
-            <p className="text-muted-foreground">
-              Our company culture is built on collaboration, creativity, and a
-              relentless pursuit of excellence. We encourage our team to think
-              outside the box, take calculated risks, and continuously learn and
-              grow. This mindset has allowed us to stay at the forefront of the
-              industry and deliver exceptional results for our clients.
             </p>
           </div>
         </div>

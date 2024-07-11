@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Mwakenya 254",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Header />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

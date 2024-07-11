@@ -1,7 +1,10 @@
+import HelpComponent from "@/components/Help";
 import React from "react";
 
 const help = () => {
-  return <div>help</div>;
+  return (
+    <main><HelpComponent/></main>
+  )
 };
 
 export default help;

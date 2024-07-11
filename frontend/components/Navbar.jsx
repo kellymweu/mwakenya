@@ -26,7 +26,7 @@ import {
 
 export default function Navbar() {
   return (
-    <header className="ml-40 flex h-20 w-full shrink-0 items-center px-4 gap-4 justify-between md:px-6">
+    <header className="ml-40 flex h-20 w-full shrink-0 items-center px-4 justify-between md:px-6">
       <NavigationMenu className="hidden lg:flex">
         <NavigationMenuList>
           {/* Main Link 1 */}
