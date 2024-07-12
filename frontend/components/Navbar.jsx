@@ -31,7 +31,10 @@ export default function Navbar() {
         <NavigationMenuList>
           {/* Main Link 1 */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Executive</NavigationMenuTrigger>
+            <Link href="/Executive">
+              <NavigationMenuTrigger>Executive</NavigationMenuTrigger>
+            </Link>
+
             <NavigationMenuContent>
               <div className="grid w-[200px] p-2">
                 <NavigationMenuLink>
@@ -56,7 +59,9 @@ export default function Navbar() {
 
           {/* Main Link 2 */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Legislature</NavigationMenuTrigger>
+            <Link href="/Legislature">
+              <NavigationMenuTrigger>Legislature</NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
                 <NavigationMenuLink>
@@ -81,7 +86,9 @@ export default function Navbar() {
 
           {/* Main Link 3 */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Judiciary</NavigationMenuTrigger>
+            <Link href="/Judiciary">
+              <NavigationMenuTrigger>Judiciary</NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
                 <NavigationMenuLink>
@@ -106,7 +113,9 @@ export default function Navbar() {
 
           {/* Main Link 4 */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Devolved Government</NavigationMenuTrigger>
+            <Link href="/Devolved-Gov">
+              <NavigationMenuTrigger>Devolved Government</NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
                 <NavigationMenuLink>
@@ -131,7 +140,9 @@ export default function Navbar() {
 
           {/* Main Link 5 */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Embassies</NavigationMenuTrigger>
+            <Link href="/Embassies">
+              <NavigationMenuTrigger>Embassies</NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
                 <NavigationMenuLink>
@@ -156,7 +167,9 @@ export default function Navbar() {
 
           {/* Main Link 6 */}
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Parastatals</NavigationMenuTrigger>
+            <Link href="/Parastatals">
+              <NavigationMenuTrigger>Parastatals</NavigationMenuTrigger>
+            </Link>
             <NavigationMenuContent align="start">
               <div className="grid w-[200px] p-2">
                 <NavigationMenuLink>
