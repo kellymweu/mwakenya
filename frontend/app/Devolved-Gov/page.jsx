@@ -29,7 +29,7 @@ const Page = () => {
       <section className="px-24">
         <div>
           <div className="mb-4 text-center">
-            <h2 className="text-2xl font-bold">Elected Officials</h2>
+            <h2 className="text-2xl font-bold">The 47 Devolved Counties</h2>
           </div>
           <div className="overflow-x-auto w-full">
             <Table>
@@ -45,7 +45,12 @@ const Page = () => {
 
               <TableBody>
                 {Counties.slice(startIndex, endIndex).map((Counties) => (
-                  <TableRow key={Counties.id}>
+                  <TableRow
+                    key={Counties.id}
+                    className={
+                      Counties.id % 2 === 0 ? "bg-slate-200" : "bg-slate-100"
+                    }
+                  >
                     <TableCell>{Counties.id}</TableCell>
                     <TableCell className="font-medium">
                       {Counties.Name}
