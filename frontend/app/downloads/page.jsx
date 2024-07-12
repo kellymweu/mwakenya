@@ -1,7 +1,7 @@
 import DownloadComponent from "@/components/Download";
 import React from "react";
 
-const downloads = () => {
+const page = () => {
   return (
     <section>
       <DownloadComponent />
@@ -9,4 +9,4 @@ const downloads = () => {
   );
 };
 
-export default downloads;
+export default page;

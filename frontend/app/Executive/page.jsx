@@ -1,16 +1,17 @@
 import TableComponent from "@/components/TableComponent";
 import React from "react";
 
-const executive = () => {
+const page = () => {
   return (
     <main className="flex flex-col items-center justify-center">
-      <section>President</section>
-      <section>Deputy President</section>
-      <section>
+      <section id="1">President</section>
+      <section id="2">Deputy President</section>
+      <section id="3">
         <TableComponent />
       </section>
+      <section id="4">NPS</section>
     </main>
   );
 };
 
-export default executive;
+export default page;

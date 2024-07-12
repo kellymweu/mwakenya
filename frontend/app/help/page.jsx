@@ -1,10 +1,10 @@
 import HelpComponent from "@/components/Help";
 import React from "react";
 
-const help = () => {
+const page = () => {
   return (
     <main><HelpComponent/></main>
   )
 };
 
-export default help;
+export default page;
