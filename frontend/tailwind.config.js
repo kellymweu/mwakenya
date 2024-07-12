@@ -18,10 +18,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        kenyanblack: "#000000",
-        kenyangreendark: "#043204",
-        kenyangreenlight: "#106C10",
-        kenyanwhite: "#ffffff",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -55,6 +51,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        kenyanblack: "#000000",
+        kenyangreendark: "#043204",
+        kenyangreenlight: "#106C10",
+        kenyanwhite: "#ffffff",
       },
       borderRadius: {
         lg: "var(--radius)",
