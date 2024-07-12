@@ -19,6 +19,10 @@ import {
 } from "@/components/ui/pagination";
 
 export default function TableComponent() {
+  const rowsPerPage = 10;
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setendIndex] = useState(0);
+
   return (
     <div>
       <div className="mb-4 text-center">
