@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   TableHeader,
@@ -13,20 +15,20 @@ import {
   PaginationContent,
   PaginationItem,
   PaginationPrevious,
-  PaginationLink,
-  PaginationEllipsis,
   PaginationNext,
 } from "@/components/ui/pagination";
+import { useState } from "react";
+import { Cabinet } from "@/lib";
 
 export default function TableComponent() {
   const rowsPerPage = 10;
   const [startIndex, setStartIndex] = useState(0);
-  const [endIndex, setendIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(0);
 
   return (
     <div>
       <div className="mb-4 text-center">
-        <h2 className="text-2xl font-bold">Table Title</h2>
+        <h2 className="text-2xl font-bold">Cabinet Members</h2>
       </div>
       <div className="overflow-x-auto w-full">
         <Table>
@@ -41,7 +43,9 @@ export default function TableComponent() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow className="bg-muted">
+            <TableRow
+              className={Cabinet.id % 2 === 0 ? "bg-slate-200" : "bg-slate-100"}
+            >
               <TableCell className="font-medium">01</TableCell>
               <TableCell>John Doe</TableCell>
               <TableCell>Ministry of ABC</TableCell>
@@ -57,27 +61,33 @@ export default function TableComponent() {
             </TableRow>
           </TableBody>
         </Table>
-        <Pagination className="mt-4">
+        <Pagination>
           <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious href="#" />
+              <PaginationPrevious
+                className={
+                  startIndex === 0
+                    ? "opacity-50 cursor-pointer"
+                    : "cursor-pointer"
+                }
+                onClick={() => {
+                  setStartIndex(startIndex - rowsPerPage);
+                  setEndIndex(endIndex - rowsPerPage);
+                }}
+              />
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#" isActive>
-                2
-              </PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">3</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationEllipsis />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationNext href="#" />
+              <PaginationNext
+                className={
+                  endIndex === Cabinet.length - 1
+                    ? "opacity-50 cursor-pointer"
+                    : "cursor-pointer"
+                }
+                onClick={() => {
+                  setStartIndex(startIndex + rowsPerPage); //10
+                  setEndIndex(endIndex + rowsPerPage); //10 + 10 = 20
+                }}
+              />
             </PaginationItem>
           </PaginationContent>
         </Pagination>

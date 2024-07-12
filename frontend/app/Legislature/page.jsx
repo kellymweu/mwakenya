@@ -30,7 +30,12 @@ const page = () => {
               </TableHeader>
               <TableBody>
                 {membersOfParliament.map((membersOfParliament) => (
-                  <TableRow key={membersOfParliament.Name}>
+                  <TableRow
+                    key={membersOfParliament.Name}
+                    className={
+                      Counties.id % 2 === 0 ? "bg-slate-200" : "bg-slate-100"
+                    }
+                  >
                     <TableCell>{membersOfParliament.Name}</TableCell>
                     <TableCell className="font-medium">
                       {membersOfParliament.Constituency}

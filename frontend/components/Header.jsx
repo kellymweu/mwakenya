@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="flex mt-4 px-14">
+    <header className="flex mt-4 px-14 gap-6">
       {/* Icon and Logo */}
       <Link href="/" className="flex items-center" prefetch={false}>
         <Image
